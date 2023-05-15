@@ -37,11 +37,15 @@ export const basketSlice = createSlice({
                 if (obj.id !== payload) return obj
             })
             state.items = [...filteredArr]
+        },
+
+        clearList: (state) => {
+            state.items = []
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { incrementItem, decrementItem, removeItem } = basketSlice.actions
+export const { incrementItem, decrementItem, removeItem, clearList } = basketSlice.actions
 
 export default basketSlice.reducer
